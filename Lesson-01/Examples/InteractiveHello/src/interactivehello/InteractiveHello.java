@@ -12,6 +12,19 @@ import java.util.Scanner; // Bring in the scanner to read input
  */
 public class InteractiveHello {
 
+    private static void playon() {
+        int i[] = {1};
+        change_i(i);
+        System.out.println("i:"+i[0]);
+    }
+    
+    public static void change_i(int i[]) 
+    {
+        int j[] = {2};
+        System.out.println("j:"+j[0]);
+        i = j;
+        //i[0]=2;
+    }
     /**
      * @param args the command line arguments
      */
@@ -21,5 +34,8 @@ public class InteractiveHello {
         System.out.print("Enter your name ==> ");                
         String yourName = input.nextLine();
         System.out.printf("Hello, %s!!!!!\n", yourName); // say hello
+        System.err.println("" + (14^23));
+        System.err.println(""+ ("Welcome".trim()=="Welcome".trim()));
+        playon();
     }
 }

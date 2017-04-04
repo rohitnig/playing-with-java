@@ -29,6 +29,27 @@ public class StringTests {
                 , Integer.toHexString(System.identityHashCode(f))
                 , Integer.toHexString(System.identityHashCode(g)));
         System.err.println("Test1: "+(f==g)+" "+f.equals(e));
+
+        long startTime = System.currentTimeMillis();  
+        concatWithString();  
+        System.out.println("Time taken by Concating with String: "+(System.currentTimeMillis()-startTime)+"ms");  
+        startTime = System.currentTimeMillis();  
+        concatWithStringBuffer();  
+        System.out.println("Time taken by Concating with  StringBuffer: "+(System.currentTimeMillis()-startTime)+"ms");  
     }
     
+    public static String concatWithString()    {  
+        String t = "Java";  
+        for (int i=0; i<10000; i++){  
+            t = t + "Tpoint";  
+        }  
+        return t;  
+    }  
+    public static String concatWithStringBuffer(){  
+        StringBuffer sb = new StringBuffer("Java");  
+        for (int i=0; i<10000; i++){  
+            sb.append("Tpoint");  
+        }  
+        return sb.toString();  
+    }  
 }

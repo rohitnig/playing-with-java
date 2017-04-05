@@ -1,3 +1,5 @@
+package thread_package;
+
 class Table{  
 	  synchronized static void printTable(int n) {//synchronized method
 				for(int i=1;i<=5;i++){
